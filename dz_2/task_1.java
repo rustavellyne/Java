@@ -8,18 +8,19 @@ public class task_1 {
 	int x = -1000;
 	int y = 1;
 	int z = 2;
-    int result = getPosSum(x,y,z);
+    int result = getPosSum(x,y,z); //вызов метода
     
     System.out.println("результат положительных чисел = "+result);
 }
+	// описываем метод
 public static int getPosSum(int x, int y, int z) {
-	if (x<0) {
+	if (x<0) {  // условия где отбрасываются отрицательыне чисал
 		x=0;
 	}if (y<0) {
 		y=0;
 	}if (z<0) {
 		z=0;	
 	}
-    return x+y+z;
+    return x+y+z; //  возврат значения 
 }
 }
