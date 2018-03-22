@@ -6,9 +6,10 @@ package dz_3;
 
 public class Dog extends Animal {//наследование
 	
-	Dog(String name, double age){ //конструктор псов
-		super.name=name;        //вызов переменных супер класса
-		super.age=age;
+	Dog(String name,double age){ //конструктор псов
+		super(name,age);
+		//super.name=name;        //вызов переменных супер класса
+		//super.age=age;
 	}
 	
 	
