@@ -70,13 +70,16 @@ public class maindz3 {
   	System.out.println("#############################");
   	task5 taskfive = new task5();
   	int [] InArr = taskfive.NewArr(11); //передаю значения из метода
-  	taskfive.Print1dArray(InArr);
   	
   	
-   // taskfive.Print1dArray(taskfive.cifra);
-   // taskfive.Print1dArray(taskfive.PreobrazArr(taskfive.cifra,taskfive.findMax(taskfive.cifra)));
- // 	taskfive.Print1dArray(taskfive.PreobrazArr(InArr));
-  	taskfive.Print1dArray(taskfive.PreobrazArr(InArr,taskfive.findMax(InArr)));
+  	
+    taskfive.Print1dArray(taskfive.cifra);
+    taskfive.Print1dArray(taskfive.PreobrazArr(taskfive.cifra));
+    System.out.println("второй проверочный ");
+    taskfive.Print1dArray(InArr);
+  
+ 
+  	taskfive.Print1dArray(taskfive.PreobrazArr(InArr));
   	
   	
 	}//public static void main

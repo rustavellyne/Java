@@ -9,12 +9,14 @@ import java.util.Random;
 //Значения входного массива не могут быть меньше 0 или больше 100.
 
 public class task5 {
-	//int [] cifra = {0,0,0,0,1};
-				  //1,1,1,2,1,1,0,1,0,3
+	
+		
+	int [] cifra = {0,0,0,0,0,0,0,1,0,0,0};
+	             //[10,1]
 	static int max;
 	int [] NewArr(int size) {   // создание масива
 		int [] array = new int[size];
-		System.out.println("Входящий масив ");
+		//System.out.println("Входящий масив ");
 		Random r = new Random();
 		int Low = 0;
 		int High = 10;//  верхнюю границу я уменьшил до 10 так как чтобы увидеть результат нужно создавать масив в 100 елементов
@@ -23,15 +25,17 @@ public class task5 {
 		}
 		return array; //возврат масива
 	}
-	 int findMax(int [] array) {
-	        Arrays.sort(array);
-	        max = array[array.length - 1];
-	        return max+1;
-	    }
+	 //int findMax(int [] array) {
+	 //       Arrays.sort(array);
+	  //      max = array[array.length - 1];
+	  //      return max+1;
+	  //  }
 	
-	public  int [] PreobrazArr(int [] array,int max) { //преобразование масива
+	public  int [] PreobrazArr(int [] array) { //преобразование масива
 		System.out.println("Исходящий масив ");
-
+		Arrays.sort(array);
+		max = array[array.length - 1];
+		     max=max+1;
 		int[]PreArr = new int [max]; // игициализация нового масива куда запишем новые значения
 		for(int i = 0; i<max;i++) {  // цикл исходящего масива
 			int count=0;                      // счетчик подсчета повторений
