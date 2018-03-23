@@ -73,8 +73,10 @@ public class maindz3 {
   	taskfive.Print1dArray(InArr);
   	
   	
-  //	taskfive.Print1dArray(taskfive.cifra);
-  	taskfive.Print1dArray(taskfive.PreobrazArr(InArr));
+   // taskfive.Print1dArray(taskfive.cifra);
+   // taskfive.Print1dArray(taskfive.PreobrazArr(taskfive.cifra,taskfive.findMax(taskfive.cifra)));
+ // 	taskfive.Print1dArray(taskfive.PreobrazArr(InArr));
+  	taskfive.Print1dArray(taskfive.PreobrazArr(InArr,taskfive.findMax(InArr)));
   	
   	
 	}//public static void main

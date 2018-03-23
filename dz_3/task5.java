@@ -1,5 +1,6 @@
 package dz_3;
 
+import java.util.Arrays;
 import java.util.Random;
 
 //Создать метод, принимающий на вход массив, и возвращающий массив содержащий 
@@ -8,8 +9,9 @@ import java.util.Random;
 //Значения входного массива не могут быть меньше 0 или больше 100.
 
 public class task5 {
-	int [] cifra = {5,3,7,3,1,9,2,9,0,4,9};
+	//int [] cifra = {0,0,0,0,1};
 				  //1,1,1,2,1,1,0,1,0,3
+	static int max;
 	int [] NewArr(int size) {   // создание масива
 		int [] array = new int[size];
 		System.out.println("Входящий масив ");
@@ -21,10 +23,17 @@ public class task5 {
 		}
 		return array; //возврат масива
 	}
-	public  int [] PreobrazArr(int [] array) { //преобразование масива
+	 int findMax(int [] array) {
+	        Arrays.sort(array);
+	        max = array[array.length - 1];
+	        return max+1;
+	    }
+	
+	public  int [] PreobrazArr(int [] array,int max) { //преобразование масива
 		System.out.println("Исходящий масив ");
-		int[]PreArr = new int [array.length]; // игициализация нового масива куда запишем новые значения
-		for(int i = 0; i<array.length;i++) {  // цикл исходящего масива
+
+		int[]PreArr = new int [max]; // игициализация нового масива куда запишем новые значения
+		for(int i = 0; i<max;i++) {  // цикл исходящего масива
 			int count=0;                      // счетчик подсчета повторений
 			for(int j=0;j<array.length;j++) {  // цикл входящего масива
 				if(array[j]==i) {count++;}// если значение вход масива равно индексу исход масива, счетчик +1
