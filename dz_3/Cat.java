@@ -2,7 +2,7 @@ package dz_3;
 
 public class Cat extends Animal { //класс кота наследует класс зверей
 	
-	Cat(String name, double age){ //конструктор котов, где должны задать
+	public Cat(String name, double age){ //конструктор котов, где должны задать
 		super(name,age);
 		//super.name=name;			// имя в типе стринг
 	//	super.age=age;			// возраст в типе дабл
@@ -10,7 +10,14 @@ public class Cat extends Animal { //класс кота наследует кл�
 	
 	
 	
-	void voice() {       //реализация метод голос
+	public void voice() {       //реализация метод голос
 		System.out.println("МЯУ");
+	}
+	public void dyingVoice() {    //реализация метод голос умирания
+		System.out.println("вииискааасссс");
+	}
+	@Override
+	protected void finalize() throws Throwable {
+	    dyingVoice();
 	}
 }

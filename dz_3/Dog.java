@@ -6,15 +6,23 @@ package dz_3;
 
 public class Dog extends Animal {//наследование
 	
-	Dog(String name,double age){ //конструктор псов
+	public Dog(String name,double age){ //конструктор псов
 		super(name,age);
 		//super.name=name;        //вызов переменных супер класса
 		//super.age=age;
 	}
 	
 	
-	void voice() {       //реализация метод голос
+	public void voice() {       //реализация метод голос
 		System.out.println("ГАВ");
+	}
+	
+	public void dyingVoice() {       //реализация метод голос умирания
+		System.out.println("увувувувувувув");
+	}
+	@Override
+	protected void finalize() throws Throwable {
+	    dyingVoice();
 	}
 	
 

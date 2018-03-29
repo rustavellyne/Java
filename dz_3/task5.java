@@ -11,8 +11,8 @@ import java.util.Random;
 public class task5 {
 	
 		
-	int [] cifra = {0,0,0,0,0,0,0,1,0,0,0};
-	             //[10,1]
+	int [] cifra = {5,3,7,3,1,9,2,9,0,4,9};
+	             //[5]
 	static int max;
 	int [] NewArr(int size) {   // создание масива
 		int [] array = new int[size];
@@ -30,7 +30,7 @@ public class task5 {
 	  //      max = array[array.length - 1];
 	  //      return max+1;
 	  //  }
-	
+	/*
 	public  int [] PreobrazArr(int [] array) { //преобразование масива
 		System.out.println("Исходящий масив ");
 		Arrays.sort(array);
@@ -46,7 +46,18 @@ public class task5 {
 		}//loop out
 		return PreArr;
 	}//metod
-	
+	*/
+	public  int [] PreobrazArr(int [] array) { //преобразование масива
+		System.out.println("Исходящий масив ");
+		Arrays.sort(array);
+		max = array[array.length - 1];
+		     max=max+1;
+		int[]PreArr = new int [max]; // игициализация нового масива куда запишем новые значения
+		for (int i = 0; i< array.length;i++) {
+			PreArr[array[i]]+=1;
+		}
+		return PreArr;
+	}//metod
 	
 	
 	void Print1dArray(int [] arr) {
