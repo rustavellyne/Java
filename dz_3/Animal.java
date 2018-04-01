@@ -48,6 +48,12 @@ abstract public class Animal {
 		return true;
 	}
 	
+	@Override
+	protected void finalize() throws Throwable {
+	    dyingVoice();
+	}
+
+	
 	
     
 }//class

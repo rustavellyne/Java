@@ -16,7 +16,12 @@ public class maindz3 {
 		Dog dog2 = new Dog("Ярикозавр", 5.5 );
 		Cat cat0 = new Cat("Барсик", 1.2);
 		Cat cat1 = new Cat("Мотя", 8.5);
-		Cat cat2 = new Cat("Кейси", 0.5);
+		Cat cat2 = new Cat("Кейqси", 1.5);
+		Cat cat3 = new Cat("Кейwси", 2.5);
+		Cat cat4 = new Cat("Кейeси", 3.5);
+		Cat cat5 = new Cat("Кеrйси", 2.5);
+		Cat cat6 = new Cat("Кеtйси", 1.5);
+		Cat cat7 = new Cat("Кеyйси", 0.5);
 		System.out.println("#############################");
 		System.out.println("задание номер 1  ");
 		System.out.println("#############################");
@@ -52,13 +57,21 @@ public class maindz3 {
   	System.out.println("задание номер 4  ");
   	System.out.println("#############################");
   	Pitomnik task4 = new Pitomnik();
+  	try {
   	task4.AnimalToPitomnik(dog0); //добавляем обекты через метод
   	task4.AnimalToPitomnik(dog1);
   	task4.AnimalToPitomnik(dog2);
   	task4.AnimalToPitomnik(cat0);
   	task4.AnimalToPitomnik(cat1);
   	task4.AnimalToPitomnik(cat2);
-  	
+	task4.AnimalToPitomnik(cat3);
+	task4.AnimalToPitomnik(cat4);
+	task4.AnimalToPitomnik(cat5);
+	task4.AnimalToPitomnik(cat6);
+	task4.AnimalToPitomnik(cat7);	
+	} catch (ArrayIndexOutOfBoundsException e) { 
+        System.out.println("в питомнике 10 мест вы превышаете количество");
+	}
   	task4.PrArray();
   	
   	task4.PitomnikFilter(Dog.class, 0, 3);
