@@ -15,9 +15,5 @@ public class Cat extends Animal { //класс кота наследует кл�
 	}
 	public void dyingVoice() {    //реализация метод голос умирания
 		System.out.println("вииискааасссс");
-	}
-	@Override
-	protected void finalize() throws Throwable {
-	    dyingVoice();
-	}
-}
+	}}
+	

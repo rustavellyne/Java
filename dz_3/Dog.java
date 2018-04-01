@@ -20,10 +20,7 @@ public class Dog extends Animal {//наследование
 	public void dyingVoice() {       //реализация метод голос умирания
 		System.out.println("увувувувувувув");
 	}
-	@Override
-	protected void finalize() throws Throwable {
-	    dyingVoice();
-	}
+	
 	
 
 }
