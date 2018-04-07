@@ -1,5 +1,7 @@
 package dz_3;
 
+import java.util.ArrayList;
+
 /*Создать класс питомник, который будет хранить массив животных. 
 Реализовать метод по добавлению животных в питомник, 
 а также по получению всех животных по типу и диапазону лет включительно
@@ -7,18 +9,23 @@ package dz_3;
 соответствующее старту диапазона и число, соответствующее его концу).
 */
 public class Pitomnik {
-	private Animal [] pitomnik = new Animal [20];// создаем масив зверей 
+	ArrayList <Animal> PitomnikD = new ArrayList<>();
+	
+	private Animal [] pitomnik = new Animal [10];// создаем масив зверей 
 	private static int N = 0; //переменная для счетчика индекса масива животных
 	
 	
 	
 	void AnimalToPitomnik(Animal Animal) {	//метод добавления обьектов
+		if (N < pitomnik.length) {
         pitomnik[N] = Animal;    //животное добавляется на 0 позицию
-        N++;// при добавлению следуюшего счтетчик работает
+        N++;}
+        // при добавлению следуюшего счтетчик работает
 		}//addtopitomnik
 
 	void PrArray() {
 		System.out.println();
+		System.out.println("в питомнике всего "+pitomnik.length+ " мест");
 		System.out.println("животные добавлены  ");
 		System.out.println();
 		for(int i=0; i < pitomnik.length; i++) {

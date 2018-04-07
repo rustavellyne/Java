@@ -14,14 +14,15 @@ public class maindz3 {
 		Dog dog0 = new Dog("Дружок",1);   //создание обьектов с отправкой данных в конструтор
 		Dog dog1 = new Dog("Лордерон", 2);
 		Dog dog2 = new Dog("Ярикозавр", 5.5 );
+		Dog dog3 = new Dog("Аврора", 3);
 		Cat cat0 = new Cat("Барсик", 1.2);
 		Cat cat1 = new Cat("Мотя", 8.5);
-		Cat cat2 = new Cat("Кейqси", 1.5);
-		Cat cat3 = new Cat("Кейwси", 2.5);
-		Cat cat4 = new Cat("Кейeси", 3.5);
-		Cat cat5 = new Cat("Кеrйси", 2.5);
-		Cat cat6 = new Cat("Кеtйси", 1.5);
-		Cat cat7 = new Cat("Кеyйси", 0.5);
+		Cat cat2 = new Cat("крес", 1.5);
+		Cat cat3 = new Cat("фраор", 2.5);
+		Cat cat4 = new Cat("чейн", 3.5);
+		Cat cat5 = new Cat("мейзи", 2.5);
+		Cat cat6 = new Cat("такер", 1.5);
+		Cat cat7 = new Cat("крис", 0.5);
 		System.out.println("#############################");
 		System.out.println("задание номер 1  ");
 		System.out.println("#############################");
@@ -57,7 +58,7 @@ public class maindz3 {
   	System.out.println("задание номер 4  ");
   	System.out.println("#############################");
   	Pitomnik task4 = new Pitomnik();
-  	try {
+  	//try {
   	task4.AnimalToPitomnik(dog0); //добавляем обекты через метод
   	task4.AnimalToPitomnik(dog1);
   	task4.AnimalToPitomnik(dog2);
@@ -68,10 +69,11 @@ public class maindz3 {
 	task4.AnimalToPitomnik(cat4);
 	task4.AnimalToPitomnik(cat5);
 	task4.AnimalToPitomnik(cat6);
-	task4.AnimalToPitomnik(cat7);	
-	} catch (ArrayIndexOutOfBoundsException e) { 
-        System.out.println("в питомнике 10 мест вы превышаете количество");
-	}
+	task4.AnimalToPitomnik(cat7);
+	
+	//} catch (ArrayIndexOutOfBoundsException e) { 
+  //      System.out.println("в питомнике 10 мест вы превышаете количество");
+//	}
   	task4.PrArray();
   	
   	task4.PitomnikFilter(Dog.class, 0, 3);
@@ -84,6 +86,29 @@ public class maindz3 {
   	task5 taskfive = new task5();
     taskfive.Print1dArray(taskfive.cifra);
     taskfive.Print1dArray(taskfive.PreobrazArr(taskfive.cifra));
+    
+    
+    System.out.println("#############################");
+  	System.out.println("животные через ArrayList динамический массив  ");
+  	System.out.println("#############################");
+  	task4.PitomnikD.add(cat0);
+  	task4.PitomnikD.add(cat1);
+  	task4.PitomnikD.add(cat2);
+  	task4.PitomnikD.add(cat3);
+  	task4.PitomnikD.add(cat4);
+  	task4.PitomnikD.add(cat5);
+  	task4.PitomnikD.add(cat6);
+  	task4.PitomnikD.add(cat7);
+  	task4.PitomnikD.add(dog0);
+  	task4.PitomnikD.add(dog1);
+  	task4.PitomnikD.add(dog2);
+  	task4.PitomnikD.add(dog3);
+  	
+  	System.out.println("добавлены в динамический массив \n"+task4.PitomnikD);
+  	
+  	
+  	
+  	
 	}//public static void main
  
 		
