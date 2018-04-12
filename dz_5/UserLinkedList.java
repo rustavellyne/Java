@@ -3,26 +3,9 @@ package dz_5;
 
 public class UserLinkedList<Type> {
 	
-	public static void main(String [] args) {
-		
-		UserLinkedList<Integer> test = new UserLinkedList<>();
-		
-		test.add(1);
-		test.add(2);
-		test.add(3);
-		System.out.println(test.size);
-		System.out.println(test.contains(4));
-		System.out.println(test.indexOf(4));
-		
-		System.out.println(test.size);
-		
-		
-		//test.
-		System.out.println(test.isEmpty());
-		System.out.println(test.firstNode.next.next.element);
-		
-		
-	}
+	//public static void main(String [] args) {
+
+//	}//main
 	
 	transient int size = 0;
 	transient Node<Type> firstNode;
@@ -33,12 +16,12 @@ public class UserLinkedList<Type> {
  //методы из задания	
 	
 	boolean add(Type element) {  //добавление в конец списка.
-		linkLast(element);
+		linkLast(element);    //вызываем метод добавления на последнне место
 		return true;
 	}
 	
 	boolean contains(Type element) {//проверка на наличие.
-		return indexOf(element) != -1;
+		return indexOf(element) != -1;      //вызываем метод и если он не равен -1 то true тоесть есть такой елемент
 	}
 	
 
@@ -51,93 +34,80 @@ public class UserLinkedList<Type> {
             
 	}
 	
-	boolean remove(Type element) { //удаление элемента.
-		if (element == null) {
-            for (Node<Type> x = firstNode; x != null; x = x.next) {
-                if (x.element == null) {
-                    unlink(x);
-                    return true;
+	boolean remove(Type element) { //удаление обьекта
+		if (element == null) {  //если null то
+            for (Node<Type> x = firstNode; x != null; x = x.next) { //в цикле заходим в первую ноду, у каждой ноды берем следующий елемент и так до последней ноды которая уже null будет
+                if (x.element == null) { //если елемент текущей ноды равен null  то 
+                    unlink(x); // тозапустить метод
+                    return true; //а потом вернуть true
                 }
             }
-        } else {
+        } else {  //иначе
             for (Node<Type> x = firstNode; x != null; x = x.next) {
-                if (element.equals(x.element)) {
-                    unlink(x);
-                    return true;
+                if (element.equals(x.element)) {//если обьекты евивалентны
+                    unlink(x);// запускаем метод
+                    return true;//возврщаем true
                 }
             }
         }
-        return false;
+        return false;// если ничего не прошло то flase
 	}
 	// ___________________________________________
 	
-	
-
-
-	/*private void linkFirst(Type element) {
-		final Node<Type> f = firstNode;
-        final Node<Type> newNode = new Node<>(null, element, f);
-        firstNode = newNode;
-        if (f == null)
-            lastNode = newNode;
-        else
-            f.prev = newNode; 
-        size++;
-	}*/
-	
-	 void linkLast(Type element) {
-		 final Node<Type> l = lastNode;
-	        final Node<Type> newNode = new Node<>(l, element, null);
-	        lastNode = newNode;
-	        if (l == null)
-	            firstNode = newNode;
+	//метод добавляет обьект в конец листа
+	 void linkLast(Type element) {  //получаем обьект
+		 final Node<Type> l = lastNode;  //создаем указатель на последнюю ноду
+	        final Node<Type> newNode = new Node<>(l, element, null); //создаем новую ноду с полученым обьектом и ссылкой на обратный обьект
+	        lastNode = newNode;// указываем что последння нода указывает на обьект
+	        if (l == null)  // так как обьект Node создалась в первый раз, ссылка l  пустая
+	            firstNode = newNode; //значит указываем что первая нода ссылается на созданый обьект 
 	        else
-	            l.next =newNode; 
-	        size++;
+	            l.next =newNode;  // а когда добавляем второе значение(и последущие) то уже первой ноде делаем указатель на следующий обьект, а у следуююдего обьекта уже есть информация о предидушем 
+	        size++;// увеличиваем размер списка
 	    }
 	
 	 private int indexOf(Type element) {
-			int index = 0;
-	        if (element == null) {
-	            for (Node<Type> x = firstNode; x != null; x = x.next) {
-	                if (x.element == null)
-	                    return index;
-	                index++;
+			int index = 0;   //отсчет с 0
+	        if (element == null) { //на случай если обьект null
+	            for (Node<Type> x = firstNode; x != null; x = x.next) { // цикл по нодам(от начальной ноды и до ноды null, next из одной ноды в следущую)
+	                if (x.element == null) //если обьект null
+	                    return index; //вернуть результат
+	                index++;// увеличить значение индекса
 	            }
-	        } else {
+	        } else {// иначе
 	            for (Node<Type> x = firstNode; x != null; x = x.next) {
-	                if (element.equals(x.element))
-	                    return index;
+	                if (element.equals(x.element))//проверяем на еквивалентность обьект
+	                    return index;//возврат результат
 	                index++;
 	            }
 	        }
-	        return -1;
+	        return -1;// если ничего не нашли то -1
 		}
 	 
-	 Type unlink(Node<Type> x) {
+	private Type unlink(Node<Type> x) {
 	        // assert x != null;
-	        final Type element = x.element;
-	        final Node<Type> next = x.next;
-	        final Node<Type> prev = x.prev;
+	        final Type element = x.element; // получаем значение ноды
+	        final Node<Type> next = x.next;  // ее следующую ссылку
+	        final Node<Type> prev = x.prev;  // предыдущую
 
-	        if (prev == null) {
-	            firstNode = next;
-	        } else {
-	            prev.next = next;
-	            x.prev = null;
+	        if (prev == null) {  // если предыдущая ссылка пустая то
+	            firstNode = next;  //слудушая нода станет первой
+	        } else {  
+	            prev.next = next;// иначем следующий обьектом предыдушей ноды станет следующий обьект розлинкованой ноды
+	            x.prev = null;   // свою связь на предыдущуий обьект удаляем
 	        }
 
-	        if (next == null) {
-	            lastNode = prev;
+	        if (next == null) {  // если следущая ссылка текущей ноды null
+	            lastNode = prev;// то предыдущая нода становися последней нодой
 	        } else {
-	            next.prev = prev;
-	            x.next = null;
+	            next.prev = prev;// иначе предыдущую ссылку следующей ноды присваеваем нашей предыдущей ноде
+	            x.next = null;// теряем связь с следующей нодой
 	        }
 
-	        x.element = null;
-	        size--;
+	        x.element = null; //убираем значение ноды
+	        size--; //уменьшаем размер списка
 	        
-	        return element;
+	        return element; //возвращаем  елемент
 	    }
 	 
 	 
@@ -154,3 +124,6 @@ public class UserLinkedList<Type> {
 	}//Class Node	
 	
 }//Class UserLinkedList
+
+
+

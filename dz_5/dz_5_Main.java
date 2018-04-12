@@ -19,6 +19,23 @@ System.out.println("#############################");
 System.out.println("задание номер 2  ");
 System.out.println("#############################");
 
+UserLinkedList<User> test = new UserLinkedList<>();
+
+User u1 = new User("Sasha","noob");
+User u2 = new User("Marina","director");
+User u3 = new User("Andre","editor");
+User u4 = new User("Misha","producer");
+User u5 = new User("Masha","pr");
+
+test.add(u1);
+test.add(u2);
+test.add(u3);
+test.add(u4);
+test.add(null);
+test.add(u5);
+System.out.println(test.remove(u3));
+
+
 
 		
 		
