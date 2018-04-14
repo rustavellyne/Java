@@ -19,8 +19,8 @@ public class Pitomnik {
 	void AnimalToPitomnik(Animal Animal) {	//метод добавления обьектов
 		if (N < pitomnik.length) {
         pitomnik[N] = Animal;    //животное добавляется на 0 позицию
-        N++;}
-        // при добавлению следуюшего счтетчик работает
+        N++;
+        } else System.out.println("питомник переполнен ");
 		}//addtopitomnik
 
 	void PrArray() {
