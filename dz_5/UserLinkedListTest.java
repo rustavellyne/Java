@@ -1,4 +1,6 @@
-package dobroeIt;
+package dz_5;
+
+
 
 import static org.junit.Assert.*;
 
