@@ -152,7 +152,7 @@ class Cat{
 	        if (age != cat.age) return false;
 	        return Name.equals(cat.Name);
 	    }
-//переопределяем hashcode чтобы уменьшить колизии 
+//переопределяем hashcode чтобы уменьшить колизии. 
 	    @Override
 	    public int hashCode() {
 	        int result = age;
